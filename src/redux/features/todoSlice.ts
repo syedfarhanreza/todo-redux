@@ -5,6 +5,7 @@ type TTodo = {
   id: string;
   title: string;
   description: string;
+  priority: string;
   isCompleted?: boolean;
 };
 
@@ -33,7 +34,9 @@ const todoSlice = createSlice({
         a.isCompleted === b.isCompleted ? 0 : a.isCompleted ? 1 : -1
       );
     },
+    filterByPriority: (state, action: PayloadAction<string>) => {},
   },
 });
-export const { addTodo, removeTodo, toggleComplete } = todoSlice.actions;
+export const { addTodo, removeTodo, toggleComplete, filterByPriority } =
+  todoSlice.actions;
 export default todoSlice.reducer;
